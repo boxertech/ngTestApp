@@ -5,11 +5,11 @@ import { PatientService }       from '../services/patient.service';
 @Component({
     selector: 'patients',
     template: require('./patients.component.html'),
-    styles: [require('./patients.component.css')]
+    styles: [require('!!raw!less!./patients.component.css')]
 
 })
 export class PatientsComponent implements OnInit {
-    patients;
+    patients:any;
 
     constructor(private router: Router, private patientService: PatientService) {}
 
@@ -24,7 +24,7 @@ export class PatientsComponent implements OnInit {
             );
     }
 
-    gotoPatientDetail(patient) {
+    gotoPatientDetail(patient:any) {
         this.router.navigate(['/patient', 1]);
     }
 
